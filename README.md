@@ -2,7 +2,7 @@
 
 **A basic Tic Tac Toe game built using HTML/JavaScript/CSS. No dependencies.** 
 
-[![View The Demo](https://www.mtb.com/personal/onlineservices/PublishingImages/alt-banking-button-view-demo-cs5452.jpg)](http://codepen.io/vasanthkay/pen/KVzYzG?editors=001)
+[![View The Demo](https://www.mtb.com/personal/onlineservices/PublishingImages/alt-banking-button-view-demo-cs5452.jpg)]([http://codepen.io/vasanthkay/pen/KVzYzG?editors=001](https://poki.com/en/g/tic-tac-toe-3))
 
 
 ##How to get started
