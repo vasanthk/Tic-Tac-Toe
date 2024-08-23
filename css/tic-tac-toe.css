@@ -4,40 +4,140 @@
   margin: 0;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/misc/background/games-bg.png') no-repeat center center/cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
 .container {
   display: flex;
-  background: #fff;
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 700px;
+  width: 90%;
+  max-width: 700px;
   min-height: 500px;
-  border-radius: 5%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
 table {
   border-collapse: collapse;
   margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
 }
 
 td {
-  background-color: #666;
-  border: 5px solid white;
-  font-size: 80px;
+  background-color: #4a4a4a;
+  border: 5px solid #fff;
+  font-size: 5vw; /* Responsive font size */
   color: #fff;
-  border-radius: 10%;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  transition: background-color 0.3s;
+  position: relative;
+  height: 5vw; /* Responsive height */
+}
+
+td:hover {
+  background-color: #5a5a5a;
+}
+
+td::before {
+  content: attr(data-value);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: inherit; /* Matches font size of td */
+  color: #fff;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.2),
+    -1px -1px 2px rgba(255, 255, 255, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.2),
+    -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
 
 #player {
   padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-body {
-  display: flex;
-  background: #eee url('https://source.unsplash.com/1600x900/?nature') no-repeat
-    center center/cover;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+.dark {
+  background: #333;
+  color: #f0f0f0;
+}
+
+.dark td {
+  background-color: #666;
+  border-color: #444;
+}
+
+.light {
+  background: #fff;
+  color: #333;
+}
+
+.light td {
+  background-color: #ddd;
+  border-color: #bbb;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  td {
+    font-size: 7vw; /* Adjust font size for smaller screens */
+    height: 7vw; /* Adjust height for smaller screens */
+  }
+
+  #player {
+    font-size: 1.2rem; /* Reduce player status font size */
+  }
+
+  .container {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  td {
+    font-size: 10vw; /* Further adjustment for very small screens */
+    height: 10vw; /* Further adjustment for very small screens */
+  }
+
+  #player {
+    font-size: 1rem; /* Further reduce player status font size */
+  }
+
+  .container {
+    min-height: 400px;
+  }
 }

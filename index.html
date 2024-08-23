@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Tic Tac Toe</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Tic Tac Toe</title>
     <link rel="stylesheet" type="text/css" href="css/tic-tac-toe.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div id="tictactoe"></div>
-      <div id="player" align="center">
-        <span id="turn" align="">Player X</span>
-      </div>
-    </div>
-    <script type="text/javascript" src="js/tic-tac-toe.js"></script>
-  </body>
+</head>
+<body>
+    <main class="container">
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" />
+            <label for="theme-switch">Toggle Dark/Light Mode</label>
+        </div>
+        <div id="tictactoe" role="grid" aria-label="Tic Tac Toe Board"></div>
+        <div id="player" align="center">
+            <span id="turn" role="status" aria-live="polite">Player X</span>
+        </div>
+    </main>
+    <script type="text/javascript" src="js/tic-tac-toe.js" defer></script>
+</body>
 </html>
